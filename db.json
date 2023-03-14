@@ -38,17 +38,26 @@
     },
     {
       "nome": "Setor 3",
-      "cargos": [
-        {
-          "nome": "Cargo 9"
-        }
-      ],
+      "cargos": [],
       "id": 3
     },
     {
-      "nome": "setor novo",
-      "cargos": [],
+      "nome": "teste 4",
+      "cargos": [
+        {
+          "nome": "teste"
+        }
+      ],
       "id": 4
+    },
+    {
+      "nome": "teste 5",
+      "cargos": [
+        {
+          "nome": "teste2"
+        }
+      ],
+      "id": 5
     }
   ]
 }
