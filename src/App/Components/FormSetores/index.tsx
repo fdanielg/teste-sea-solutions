@@ -63,13 +63,6 @@ export default function FormSetores() {
       cargos: setor?.cargos ?? [],
     },
     onSubmit: (values) => {
-      const setorExiste = selectSetorExiste(values.nome)(state);
-
-      if (setorExiste) {
-        formik.setFieldError("nome", "Setor já existe.");
-        return;
-      }
-
       if (id) {
         dispatch(
           patchSetor({
@@ -86,6 +79,12 @@ export default function FormSetores() {
         setOpenSnackbar(true);
         setSnackbarName("Setor editado com sucesso.");
       } else {
+        const setorExiste = selectSetorExiste(values.nome)(state);
+
+        if (setorExiste) {
+          formik.setFieldError("nome", "Setor já existe.");
+          return;
+        }
         dispatch(
           postSetor({
             cargos: values.cargos,
@@ -137,7 +136,11 @@ export default function FormSetores() {
 
         <Box className={styles.textfieldsWrapper}>
           <Box>
-            <TextField fullWidth {...formik.getFieldProps("nome")} placeholder="Nome" />
+            <TextField
+              fullWidth
+              {...formik.getFieldProps("nome")}
+              placeholder="Nome"
+            />
 
             <Text paddingTop={1} paddingLeft={1} fontSize={14} color="red">
               {formik.touched.nome && formik.errors.nome}
