@@ -1,3 +1,7 @@
+# Observação
+
+Por causa do json-sever so esta funcionando ao rodar local o projeto, certifique-se de rodar o projeto e o watch-json-server
+
 # Página para criação de setores
 
 Página para criação de setores, em cada setor tem a possibilidade de adicionar cargos, os cargos adicionados em um setor não podem ser os mesmos de outro e não deve ser criado setores com o mesmo nome.

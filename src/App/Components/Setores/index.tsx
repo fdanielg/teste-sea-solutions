@@ -14,7 +14,7 @@ export default function Setores() {
     // @ts-ignore
     dispatch(getSetores());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  });
+  }, []);
 
   return (
     <Box display="flex" flexDirection="column" gap={2}>
