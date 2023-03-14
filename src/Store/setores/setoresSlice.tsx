@@ -38,7 +38,7 @@ export const getSetores = createAsyncThunk<
   }
 >("setores/getSetores", async (_request, thunkApi) => {
   try {
-    const response = await axios.get("http://localhost:3001/setores");
+    const response = await axios.get("https://json-server-teste-sea.vercel.app/setores");
     return response.data;
   } catch (error) {
     return thunkApi.rejectWithValue({
@@ -57,7 +57,7 @@ export const patchSetor = createAsyncThunk<
 >("setores/patchSetor", async (request, thunkApi) => {
   try {
     const response = await axios.patch(
-      `http://localhost:3001/setores/${request.params.id}`,
+      `https://json-server-teste-sea.vercel.app/setores/${request.params.id}`,
       request.payload
     );
     return response.data;
@@ -79,7 +79,7 @@ export const postSetor = createAsyncThunk<
   "setores/postSetor",
 
   async ({ nome, cargos }: PostSetorRequest) => {
-    const response = await axios.post("http://localhost:3001/setores", {
+    const response = await axios.post("https://json-server-teste-sea.vercel.app/setores", {
       nome,
       cargos,
     });
@@ -95,7 +95,7 @@ export const deleteSetor = createAsyncThunk<
   }
 >("setores/deleteSetor", async (request) => {
   await axios.delete(
-    `http://localhost:3001/setores/${request.id}`
+    `https://json-server-teste-sea.vercel.app/setores/${request.id}`
   );
   return {
     id: request.id,
