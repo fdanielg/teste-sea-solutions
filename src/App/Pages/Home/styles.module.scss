@@ -1,0 +1,36 @@
+.container {
+  .top {
+    margin-top: 66px;
+    margin-bottom: 45px;
+
+    a {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      width: fit-content;
+      padding: 26px 38px;
+      background-color: #c4c4c4;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    height: calc(100vh - 279px);
+
+    .left {
+      width: 40%;
+      background-color: #c4c4c4;
+      padding: 25px 18px;
+    }
+
+    .right {
+      width: 60%;
+      background-color: #c4c4c4;
+      padding: 25px 18px;
+    }
+  }
+}

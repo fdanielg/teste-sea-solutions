@@ -1,0 +1,77 @@
+.container {
+  .accordionRoot {
+    border-radius: 10px;
+    background-color: #a09f9f;
+    color: #fff;
+    padding: 5px 25px;
+    margin: 0;
+    &.accordionExpanded {
+      border: 1px solid #000;
+      background-color: #a09f9f;
+    }
+  }
+
+  .lineShadow {
+    margin: 15px 0;
+    opacity: 0.5;
+  }
+
+  .accordionSummaryRoot {
+    background-color: #a09f9f;
+    color: #000;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 0;
+    &.accordionSummaryExpanded {
+      background-color: #a09f9f;
+      .accordionSummaryExpandedIcon {
+        transform: rotate(180deg);
+        transition: ease-in-out;
+      }
+    }
+  }
+
+  .accordionDetails {
+    padding: 5px 0;
+    > * {
+      &:not(:first-child) {
+        margin-top: 5px;
+      }
+    }
+
+    .detailsWrapper {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      .cargosWrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        max-width: 300px;
+
+        .cargoBox {
+          width: fit-content;
+          background-color: #c4c4c4;
+          padding: 5px 10px;
+        }
+      }
+
+      .buttonWrapper {
+        margin-top: 16px;
+        display: flex;
+        gap: 8px;
+
+        button {
+          background-color: #C4C4C4;
+        }
+
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

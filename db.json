@@ -1,0 +1,37 @@
+{
+  "setores": [
+    {
+      "id": 1,
+      "nome": "setor 1",
+
+      "cargos": [
+        { "id": 1, "nome": "cargo 1" },
+        { "id": 2, "nome": "cargo 2" },
+        { "id": 3, "nome": "cargo 3" },
+        { "id": 4, "nome": "cargo 4" }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "setor 2",
+
+      "cargos": [
+        { "id": 5, "nome": "cargo 5" },
+        { "id": 6, "nome": "cargo 6" },
+        { "id": 7, "nome": "cargo 7" },
+        { "id": 8, "nome": "cargo 8" }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "setor 3",
+
+      "cargos": [
+        { "id": 9, "nome": "cargo 9" },
+        { "id": 10, "nome": "cargo 10" },
+        { "id": 11, "nome": "cargo 11" },
+        { "id": 12, "nome": "cargo 12" }
+      ]
+    }
+  ]
+}
