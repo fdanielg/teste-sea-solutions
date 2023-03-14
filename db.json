@@ -41,12 +41,14 @@
       "cargos": [
         {
           "nome": "Cargo 9"
-        },
-        {
-          "nome": "Cargo 10"
         }
       ],
       "id": 3
+    },
+    {
+      "nome": "setor novo",
+      "cargos": [],
+      "id": 4
     }
   ]
 }
