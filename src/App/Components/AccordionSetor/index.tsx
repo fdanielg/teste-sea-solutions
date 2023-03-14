@@ -6,7 +6,7 @@ import Box from "../../../components/Box/Box";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { Setor } from "../../../Store/setores/models";
-import { deleteSetores } from "../../../Store/setores/setoresSlice";
+import { deleteSetor } from "../../../Store/setores/setoresSlice";
 import styles from "./styles.module.scss";
 import { useAppDispatch } from "../../../Store/store";
 import { useState } from "react";
@@ -68,7 +68,7 @@ export default function AccordionSetor({
               <Button
                 size="small"
                 variant="contained"
-                onClick={() => dispatch(deleteSetores({ id: setor.id }))}
+                onClick={() => dispatch(deleteSetor({ id: setor.id }))}
               >
                 EXCLUIR
               </Button>

@@ -1,37 +1,58 @@
 {
   "setores": [
     {
-      "id": 1,
-      "nome": "setor 1",
-
+      "nome": "Setor 1",
       "cargos": [
-        { "id": 1, "nome": "cargo 1" },
-        { "id": 2, "nome": "cargo 2" },
-        { "id": 3, "nome": "cargo 3" },
-        { "id": 4, "nome": "cargo 4" }
-      ]
+        {
+          "nome": "Cargo 1"
+        },
+        {
+          "nome": "Cargo 2"
+        },
+        {
+          "nome": "Cargo 3"
+        },
+        {
+          "nome": "Cargo 4"
+        }
+      ],
+      "id": 1
     },
     {
-      "id": 2,
-      "nome": "setor 2",
-
+      "nome": "Setor 2",
       "cargos": [
-        { "id": 5, "nome": "cargo 5" },
-        { "id": 6, "nome": "cargo 6" },
-        { "id": 7, "nome": "cargo 7" },
-        { "id": 8, "nome": "cargo 8" }
-      ]
+        {
+          "nome": "Cargo 5"
+        },
+        {
+          "nome": "Cargo 6"
+        },
+        {
+          "nome": "Cargo 7"
+        },
+        {
+          "nome": "Cargo 8"
+        }
+      ],
+      "id": 2
     },
     {
-      "id": 3,
-      "nome": "setor 3",
-
+      "nome": "Setor 3",
       "cargos": [
-        { "id": 9, "nome": "cargo 9" },
-        { "id": 10, "nome": "cargo 10" },
-        { "id": 11, "nome": "cargo 11" },
-        { "id": 12, "nome": "cargo 12" }
-      ]
+        {
+          "nome": "Cargo 9"
+        },
+        {
+          "nome": "Cargo 10"
+        },
+        {
+          "nome": "Cargo 11"
+        },
+        {
+          "nome": "Cargo 12"
+        }
+      ],
+      "id": 3
     }
   ]
 }

@@ -11,7 +11,7 @@ export type Setor = {
 
 export type PostSetorRequest = {
   nome: string;
-  cargos: string[];
+  cargos: Cargo[];
 };
 export type PostSetorResponse = Setor;
 

@@ -12,6 +12,7 @@ import {
 import { LoadingStateMachine, ReducerError } from "../models";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+import { AppState } from "../store";
 import axios from "axios";
 
 type SetoresState = {
@@ -47,13 +48,13 @@ export const getSetores = createAsyncThunk<
   }
 });
 
-export const patchSetores = createAsyncThunk<
+export const patchSetor = createAsyncThunk<
   PatchSetorResponse,
   PatchSetorRequest,
   {
     rejectValue: any;
   }
->("setores/patchSetores", async (request, thunkApi) => {
+>("setores/patchSetor", async (request, thunkApi) => {
   try {
     const response = await axios.patch(
       `http://localhost:3001/setores/${request.params.id}`,
@@ -68,14 +69,14 @@ export const patchSetores = createAsyncThunk<
   }
 });
 
-export const postSetores = createAsyncThunk<
+export const postSetor = createAsyncThunk<
   PostSetorResponse,
   PostSetorRequest,
   {
     rejectValue: any;
   }
 >(
-  "setores/postSetores",
+  "setores/postSetor",
 
   async ({ nome, cargos }: PostSetorRequest) => {
     const response = await axios.post("http://localhost:3001/setores", {
@@ -86,14 +87,14 @@ export const postSetores = createAsyncThunk<
   }
 );
 
-export const deleteSetores = createAsyncThunk<
+export const deleteSetor = createAsyncThunk<
   DeleteSetorResponse,
   DeleteSetorRequest,
   {
     rejectValue: any;
   }
->("setores/deleteSetores", async (request) => {
-  const response = await axios.delete(
+>("setores/deleteSetor", async (request) => {
+  await axios.delete(
     `http://localhost:3001/setores/${request.id}`
   );
   return {
@@ -119,10 +120,10 @@ export const setoresSlice = createSlice({
       state.error = payload.error ?? state.error;
     });
 
-    builder.addCase(patchSetores.pending, (state) => {
+    builder.addCase(patchSetor.pending, (state) => {
       state.status = "loading";
     });
-    builder.addCase(patchSetores.fulfilled, (state, action) => {
+    builder.addCase(patchSetor.fulfilled, (state, action) => {
       state.status = "success";
       state.data = state.data.map((setor) => {
         if (setor.id === action.payload.id) {
@@ -131,35 +132,47 @@ export const setoresSlice = createSlice({
         return setor;
       });
     });
-    builder.addCase(patchSetores.rejected, (state, { payload }) => {
+    builder.addCase(patchSetor.rejected, (state, { payload }) => {
       state.status = "error";
       state.error = payload.error ?? state.error;
     });
 
-    builder.addCase(postSetores.pending, (state) => {
+    builder.addCase(postSetor.pending, (state) => {
       state.status = "loading";
     });
-    builder.addCase(postSetores.fulfilled, (state, action) => {
+    builder.addCase(postSetor.fulfilled, (state, action) => {
       state.status = "success";
       state.data = [...state.data, action.payload];
     });
-    builder.addCase(postSetores.rejected, (state, { payload }) => {
+    builder.addCase(postSetor.rejected, (state, { payload }) => {
       state.status = "error";
       state.error = payload.error ?? state.error;
     });
 
-    builder.addCase(deleteSetores.pending, (state) => {
+    builder.addCase(deleteSetor.pending, (state) => {
       state.status = "loading";
     });
-    builder.addCase(deleteSetores.fulfilled, (state, action) => {
+    builder.addCase(deleteSetor.fulfilled, (state, action) => {
       state.status = "success";
       state.data = state.data.filter((setor) => setor.id !== action.payload.id);
     });
-    builder.addCase(deleteSetores.rejected, (state, { payload }) => {
+    builder.addCase(deleteSetor.rejected, (state, { payload }) => {
       state.status = "error";
       state.error = payload.error ?? state.error;
     });
   },
 });
+
+export const selectCargoExiste =
+  (nome: string) =>
+  (state: AppState): boolean =>
+    state.setores.data.some((setor) =>
+      setor.cargos.some((cargo) => cargo.nome === nome)
+    );
+
+export const selectSetorExiste =
+  (nome: string) =>
+  (state: AppState): boolean =>
+    state.setores.data.some((setor) => setor.nome === nome);
 
 export default setoresSlice.reducer;

@@ -1,5 +1,4 @@
 import { useAppDispatch, useAppSelector } from "../../../Store/store";
-import { useDispatch, useSelector } from "react-redux";
 
 import AccordionSetor from "../../Components/AccordionSetor";
 import Box from "../../../components/Box/Box";
@@ -7,14 +6,14 @@ import { getSetores } from "../../../Store/setores/setoresSlice";
 import { useEffect } from "react";
 
 export default function Setores() {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   const { data: setores } = useAppSelector((state) => state.setores);
 
   console.log(setores);
   useEffect(() => {
     // @ts-ignore
     dispatch(getSetores());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
