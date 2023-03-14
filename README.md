@@ -11,6 +11,7 @@ Página para criação de setores, em cada setor tem a possibilidade de adiciona
 
 - npm install ou yarn (Para baixar os pacotes)
 - npm run start ou yarn start (Para inicializar o projeto)
+- npm run watch-json-server ou yarn watch-json-server
 
 ## 🛠️ Construído com
 
